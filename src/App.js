@@ -15,8 +15,14 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Service from "./components/Service";
 import Contact from "./components/Contact";
-import Post from './components/Post';
+import Post from "./components/Post";
+// Router Private Router
+// import PrivateRoute from "./private-Route";
+// import PrivatePage from "./private/admin-page";
+// import PublicPage from "./public/front-page";
 const App = () => {
+  const isLogin = localStorage.getItem("user") != null;
+  console.log(isLogin);
   return (
     <Router>
       <div className="App">
@@ -62,15 +68,20 @@ const App = () => {
           </nav>
 
           <div className="auth-wrapper">
-            <Route exact path="/" component={Home} />
+            <Route path="/" component={Home} exact />
             <div className="auth-inner">
               <Switch>
-                <Route path="/sign-in" component={Login} />
-                <Route path="/sign-up" component={SignUp} />
-                <Route path="/about" component={About} />
-                <Route path="/service" component={Service} />
-                <Route path="/contact" component={Contact} />
-                <Route path="/:id" component={Post}/>
+                <Route path="/sign-in" component={Login} exact/>
+                <Route path="/sign-up" component={SignUp} exact/>
+                <Route path="/about" component={About} exact/>
+                <Route path="/service" component={Service} exact/>
+                <Route path="/contact" component={Contact} exact/>
+                <Route path="/:id" component={Post} exact/>
+                {/* <PrivateRoute
+                  isLogin={isLogin}
+                  adminDashboardPage={PrivatePage}
+                  authenticationComponent={PublicPage}
+                /> */}
               </Switch>
             </div>
           </div>

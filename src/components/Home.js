@@ -1,15 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import home from "../css/Home.css";
-import {
-  NavDropdown,
-  Navbar,
-  Nav,
-  FormControl,
-  Form,
-  Button,
-  Container,
-} from "react-bootstrap";
 
 const Home = (props) => {
   const usercookie = localStorage.getItem("user");

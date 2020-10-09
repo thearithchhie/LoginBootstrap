@@ -27,24 +27,7 @@ const Post = () => {
   return (
     <div className="post">
       <h1>Post</h1>
-      {/* {user ? (`This is my : ${user.id} and my name is ${user.name}`) : ("Not Found") } */}
-      {users.map((user1) => (
-        <div className="user_container" style={{ alignItems: "center" }}>
-          <ul
-            className="item"
-            style={{
-              display: "flex",
-              justifyContent: "space-around",
-              color: "white",
-            }}
-          >
-            <li style={{ listStyle: "none" }}>{user1.id}</li>
-            <li style={{ listStyle: "none" }}>{user1.name}</li>
-            <li style={{ listStyle: "none" }}>{user1.gender}</li>
-          </ul>
-        </div>
-      ))}
-      {document.write(params.id)}
+      {user ? (`This is my ID : ${user.id} and my name is ${user.name} after gender ${user.gender}`) : ("Not Found") }
     </div>
   );
 };
